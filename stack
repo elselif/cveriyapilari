@@ -1,0 +1,86 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//stack
+struct node {
+	int data;
+	struct node *next;
+};
+
+// top
+struct node *top=NULL;
+
+//push
+
+int push(int data){
+	// stack is empty
+	if(top==NULL){
+		struct node *new = (struct node *)malloc(sizeof(struct node)); 
+		new->data=data;
+		new->next=NULL;
+		
+		top = new ;
+		
+	}
+	
+	// stack is not empty
+	else{
+		struct node *new = (struct node*)malloc(sizeof(struct node));
+		new->data=data;
+		new->next = top;
+		
+		top=new;
+	}
+	return 1;
+}
+
+//display
+
+//pop
+int pop(){
+	//stack is empty
+	if(top==NULL){
+		printf("stack is empty");
+		return 1;
+		
+	}
+	//stack is not empty
+	struct node *temp = top;
+	
+	top = top->next;
+	free(temp);
+	
+	return 1;
+}
+
+int display(){
+	//stack is empty
+	if(top ==NULL ){
+		printf("stack is empty\n");
+		return 1;
+	}
+	//stack is not empty
+	
+	struct node *index = top;
+	while(index!=NULL){
+		printf("%d -",index->data);
+		index = index->next;
+	}
+	printf("\n");
+	return 1;
+}
+
+int main(){
+	
+	push(1);
+	push(2);
+	push(3);
+	
+	
+	display();
+	
+	pop();
+	display();
+
+	return 1;
+}
