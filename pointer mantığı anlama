@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main()
+{
+
+/*
+pointer : gösterici adres bilgisi tutar
+
+*/
+
+
+/*
+ampersant adres bilgisini almak için
+*/
+
+int e = 5;
+int *p = &e;
+
+printf("%p\n",p);
+
+/*
+
+& adres bilgini verir
+* adresteki değeri verir
+
+*/
+printf("%d",*p);
+
+}
