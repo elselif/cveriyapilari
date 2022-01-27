@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+/*
+arama algoritmaları
+1- linear search (doğrusal arama) --> baştan başlayarak aranan sayıyla kıyaslıyor,varsa indirisi döndürür yoksa -1 döndür
+2-binary search(ikili sıralama
+*/
+
+//linear search fonksiyonu
+
+int linearSearch(int dizi[],int n,int aranan){
+	int i;
+	for(i=0;i<n;i++)
+	{
+		
+		if(aranan==dizi[i])
+		return i;
+		
+	}
+	return -1;
+	
+}
+
+// ana fonksiyon
+
+int main()
+{
+	int n;
+	printf("dizinin boyunu giriniz");
+	scanf("%d",&n);
+	int dizi[n];
+	int i=0;
+	while(i<n)
+	{
+		printf("sayi : ");
+		scanf("%d",&dizi[i]);
+		i++;
+	}
+	printf("aranan sayiyi giriniz :");
+	int aranan;
+	scanf("%d",&aranan);
+	int sonuc=linearSearch(dizi,n,aranan);
+	if(sonuc==-1)
+	printf("aranan sayi dizide yoktur\n");
+	else
+	printf("aranan sayi dizide vardir\n");
+}
