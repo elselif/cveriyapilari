@@ -1,0 +1,19 @@
+#include<stdio.h>
+
+#define MAX 50
+
+void selectionsort(int arr[],int size){
+	int i,j;
+	int minumumindex;
+	for(i=0; i<size;i++){
+		minumumindex = i;
+		for(j=i;j<size;j++){
+			if(arr[j]<arr[minumumindex]){
+				minumumidenx = j;
+			}
+		}
+		int temp= arr[i];
+		arr[i]= arr[minumumindex];
+		arr[minumumindex]=temp;
+	}
+}
